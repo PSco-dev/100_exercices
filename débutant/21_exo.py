@@ -35,9 +35,8 @@ def pass_generator(longueur_du_mot_passe: int=10) -> str:
         str: le mot de passe généré
     """
     caracteres = string.ascii_letters + string.digits + string.punctuation
-    mdp = ""
-    for _ in range(longueur_du_mot_passe):
-        mdp += random.choice(caracteres)
+    mdp = "".join(random.choices(caracteres, k=longueur_du_mot_passe))
+
     return mdp
 
 def main():
